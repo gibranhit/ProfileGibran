@@ -4,6 +4,8 @@ import androidx.compose.runtime.Composable
 import com.stevdza_san.website.styles.ButtonStyle
 import com.stevdza_san.website.styles.SocialIconStyle
 import com.stevdza_san.website.util.Res
+import com.stevdza_san.website.util.Res.String.SKILLS
+import com.stevdza_san.website.util.Res.String.skills
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
@@ -49,11 +51,11 @@ fun LeftSide(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(all = 50.px),
+            .padding(all = 25.px),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = if (breakpoint <= Breakpoint.SM)
             Alignment.CenterHorizontally else Alignment.Start
-    ){
+    ) {
         SpanText(
             text = Res.String.NAME,
             modifier = Modifier
@@ -104,9 +106,18 @@ fun LeftSide(
                 ),
             text = Res.String.ABOUT_ME
         )
+        SpanText(
+            text = "✔ Available for new projects",
+            modifier = Modifier
+                .fontFamily(Res.String.ROBOTO_REGULAR)
+                .fontSize(18.px)
+                .color(if (colorMode.isLight) Colors.Green else Colors.LightGreen)
+                .margin(bottom = 16.px)
+                .fontWeight(FontWeight.Bold)
+        )
         Button(
             modifier = ButtonStyle.toModifier()
-                .margin(bottom = 50.px),
+                .margin(bottom = 16.px),
             size = ButtonSize.LG,
             onClick = { window.location.href = Res.String.MY_EMAIL }
         ) {
@@ -127,6 +138,43 @@ fun LeftSide(
                 text = Res.String.BUTTON_TEXT
             )
         }
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .margin(top = 16.px, bottom = 16.px),
+            horizontalAlignment = if (breakpoint <= Breakpoint.SM) Alignment.CenterHorizontally else Alignment.Start
+        ) {
+            SpanText(
+                text = SKILLS,
+                modifier = Modifier
+                    .fontFamily(Res.String.ROBOTO_CONDENSED)
+                    .fontSize(20.px)
+                    .fontWeight(FontWeight.Bold)
+                    .margin(bottom = 12.px)
+                    .color(if (colorMode.isLight) Colors.Black else Colors.White)
+            )
+            skills.chunked(3).forEach { rowSkills ->
+                Row(
+                    modifier = Modifier.fillMaxWidth()
+                        .margin(bottom = 8.px),
+                    horizontalArrangement = Arrangement.spacedBy(12.px)
+                ) {
+                    rowSkills.forEach { skill ->
+                        SpanText(
+                            text = skill,
+                            modifier = Modifier
+                                .fontFamily(Res.String.ROBOTO_REGULAR)
+                                .fontSize(14.px)
+                                .color(if (colorMode.isLight) Colors.Black else Colors.White)
+                                .padding(leftRight = 8.px, topBottom = 4.px)
+                                .background(
+                                    if (colorMode.isLight) Colors.LightGray else Colors.Gray
+                                )
+                        )
+                    }
+                }
+            }
+        }
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -134,18 +182,14 @@ fun LeftSide(
             horizontalArrangement = if (breakpoint <= Breakpoint.SM)
                 Arrangement.Center else Arrangement.Start
         ) {
-            SocialIcon.entries.filter {
-                if (colorMode.isLight) !it.name.contains("Light")
-                else it.name.contains("Light")
-            }.forEach {
+            SocialIcon.entries.forEach {
                 IconButton(
                     modifier = SocialIconStyle.toModifier(),
                     colorMode = colorMode,
-                    icon = it.icon,
+                    icon = if (colorMode.isLight) it.iconLight else it.icon,
                     link = it.link
                 )
             }
         }
     }
-
 }

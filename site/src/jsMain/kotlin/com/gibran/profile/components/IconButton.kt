@@ -56,30 +56,22 @@ fun IconButton(
 
 enum class SocialIcon(
     val icon: String,
+    val iconLight: String,
     val link: String
 ) {
     Github(
         icon = Res.Icon.GITHUB,
-        link = "https://github.com/stevdza-san"
+        iconLight = Res.Icon.GITHUB_LIGHT,
+        link = "https://github.com/gibranhit"
     ),
-    GithubLight(
-        icon = Res.Icon.GITHUB_LIGHT,
-        link = "https://github.com/stevdza-san"
-    ),
-    Gitlab(
-        icon = Res.Icon.GITLAB,
-        link = "https://gitlab.com"
-    ),
-    GitlabLight(
-        icon = Res.Icon.GITLAB_LIGHT,
-        link = "https://gitlab.com"
+    LinkedIn(
+        icon = Res.Icon.LINKEDIN,
+        iconLight = Res.Icon.LINKEDIN_LIGHT,
+        link = "https://www.linkedin.com/in/gibran-reyes-429992171/"
     ),
     Instagram(
         icon = Res.Icon.INSTAGRAM,
-        link = "https://www.instagram.com/stevdza_san"
-    ),
-    InstagramLight(
-        icon = Res.Icon.INSTAGRAM_LIGHT,
-        link = "https://www.instagram.com/stevdza_san"
+        iconLight = Res.Icon.INSTAGRAM_LIGHT,
+        link = "https://www.instagram.com/gibranhit"
     )
 }

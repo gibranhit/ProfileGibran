@@ -26,6 +26,8 @@ object Res {
         const val GITLAB_LIGHT = "gitlab_light.svg"
         const val SUN = "sun.svg"
         const val MOON = "moon.svg"
+        const val LINKEDIN = "linkedin.svg"
+        const val LINKEDIN_LIGHT = "linkedin_light.svg"
     }
 
     object Image {
@@ -42,12 +44,19 @@ object Res {
         const val ROBOTO_REGULAR = "RobotoRegular"
         const val MY_EMAIL = "mailto:gibrannhit@gmail.com"
         const val SAVED_THEME = "theme"
+        const val SKILLS = "skills"
+        val skills = setOf(
+            "Kotlin", "Java","Xml","Jetpack Compose", "MVVM", "Clean Architecture",
+            "Room", "Retrofit", "Hilt", "Git", "JUnit", "Agile",
+            "Kotlin Multiplatform", "Compose Multiplatform", "Scrum", "CI/CD", "Firebase",
+            "Realm", "SQLite", "Testing", "Gradle"
+        )
     }
 
     object Dimens {
         const val BORDER_RADIUS = 8
-        const val MAX_CARD_WIDTH = 1000
-        const val MAX_CARD_HEIGHT = 600
+        const val MAX_CARD_WIDTH = 1100
+        const val MAX_CARD_HEIGHT = 800
         const val ICON_SIZE = 24
         const val ICON_SIZE_LG = 32
     }
