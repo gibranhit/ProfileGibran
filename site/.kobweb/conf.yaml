@@ -1,0 +1,14 @@
+site:
+  title: "ProfileGibran"
+
+server:
+  files:
+    dev:
+      contentRoot: "build/processedResources/js/main/public"
+      script: "build/kotlin-webpack/js/developmentExecutable/profile.js"
+      api: "build/libs/profile.jar"
+    prod:
+      script: "build/kotlin-webpack/js/productionExecutable/profile.js"
+      siteRoot: ".kobweb/site"
+
+  port: 8080
