@@ -4,15 +4,15 @@ import com.varabyte.kobweb.compose.ui.graphics.Color
 
 object Res {
     enum class Theme(val color: Color) {
-        BLUE(color = Color.rgb(r = 33, g = 150, b = 243)),
-        LIGHT_BLUE(color = Color.rgb(r = 168, g = 236, b = 255)),
-        DARK_BLUE(color = Color.rgb(r = 34, g = 63, b = 94)),
-        SOCIAL_ICON_BACKGROUND_LIGHT(color = Color.rgb(r = 230, g = 230, b = 230)),
-        SOCIAL_ICON_BACKGROUND_DARK(color = Color.rgb(r = 48, g = 82, b = 118)),
-        GRADIENT_ONE(color = Color.rgb(r = 161, g = 196, b = 253)),
-        GRADIENT_ONE_DARK(color = Color.rgb(r = 19, g = 38, b = 58)),
-        GRADIENT_TWO(color = Color.rgb(r = 194, g = 233, b = 251)),
-        GRADIENT_TWO_DARK(color = Color.rgb(r = 20, g = 46, b = 73))
+        BLUE(color = Color.rgb(40, 116, 166)), // Azul profesional principal
+        LIGHT_BLUE(color = Color.rgb(224, 242, 254)), // Fondo claro suave
+        DARK_BLUE(color = Color.rgb(36, 50, 66)), // Texto oscuro elegante
+        SOCIAL_ICON_BACKGROUND_LIGHT(color = Color.rgb(248, 250, 252)), // Fondo modo claro neutro
+        SOCIAL_ICON_BACKGROUND_DARK(color = Color.rgb(55, 71, 79)), // Fondo modo oscuro para íconos
+        GRADIENT_ONE(color = Color.rgb(103, 178, 255)), // Azul claro con vida
+        GRADIENT_ONE_DARK(color = Color.rgb(36, 50, 66)), // Gradiente fondo oscuro elegante
+        GRADIENT_TWO(color = Color.rgb(0, 128, 255)), // Azul fuerte para profundidad
+        GRADIENT_TWO_DARK(color = Color.rgb(33, 33, 33)) // Complemento neutro oscuro
     }
 
     object Icon {
